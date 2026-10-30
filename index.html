@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Dedicated Space</title>
+    <style>
+        :root {
+            --bg-deep: #fff8f8;
+            --bg-surface: #ffffff;
+            --accent-gold: #c99398;
+            --accent-dark: #4a1525;
+            --text-main: #33141e;
+            --text-muted: #8a6873;
+            --border-line: #f2e1e3;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-main); overflow-x: hidden; }
+        
+        .bg-mesh {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at 10% 20%, rgba(243, 211, 215, 0.4) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(201, 147, 152, 0.2) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 8%; border-bottom: 1px solid var(--border-line);
+            background-color: rgba(196, 26, 139, 0.85); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .nav-logo { font-family: "Georgia", serif; font-size: 1.4rem; font-weight: bold; color: var(--accent-dark); }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; transition: color 0.3s; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-dark); border-color: var(--accent-gold); }
+
+        .hero-container { 
+            max-width: 1100px; margin: 0 auto; padding: 80px 20px; 
+            display: flex; align-items: center; justify-content: space-between; 
+            min-height: 80vh; gap: 60px; opacity: 0; transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .hero-container.loaded { opacity: 1; transform: translateY(0); }
+
+        .hero-text-block { flex: 1.2; text-align: left; }
+        .hero-text-block h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent-gold); margin-bottom: 15px; font-weight: 700; }
+        .hero-text-block h1 { font-family: "Georgia", serif; font-size: 4rem; font-weight: 400; color: var(--accent-dark); line-height: 1.15; margin-bottom: 20px; }
+        .typing-container { font-size: 1.3rem; color: var(--text-muted); font-style: italic; line-height: 1.6; border-left: 3px solid var(--accent-gold); padding-left: 15px; }
+        
+        .hero-image-block { flex: 0.8; display: flex; justify-content: center; }
+        .premium-frame { width: 340px; height: 440px; background-color: var(--bg-surface); border-radius: 12px; padding: 12px; box-shadow: 0 20px 40px rgba(74, 21, 37, 0.06); border: 1px solid var(--border-line); }
+
+        @media (max-width: 900px) {
+            .hero-container { flex-direction: column-reverse; text-align: center; padding: 40px 20px; gap: 40px; }
+            .hero-text-block { text-align: center; }
+            .hero-text-block h1 { font-size: 3rem; }
+            .typing-container { border-left: none; padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-mesh"></div>
+    <nav>
+        <div class="nav-logo">MY LOVE </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="hero-container" id="heroView">
+        <div class="hero-text-block">
+            <h2>A Dedicated Love</h2>
+            <h1>Monica Alex</h1>
+            <div class="typing-container">
+                "The quiet anchor, the steady joy, and the absolute center of my entire world.
+                The one i want to spend my life with. This is evidence of small odds, example of imposibilities becoming posible"
+            </div>
+        </div>
+        <div class="hero-image-block">
+            <div class="premium-frame">
+                <img src="images/hero-pic.jpeg" alt="Her Photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { document.getElementById('heroView').classList.add('loaded'); });
+    </script>
+</body>
+</html>

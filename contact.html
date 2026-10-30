@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Direct Channel</title>
+    <style>
+        :root {
+            --bg-deep: #fff8f8; --bg-surface: #ffffff; --accent-gold: #c99398; --accent-dark: #4a1525; --text-main: #33141e; --text-muted: #8a6873; --border-line: #f2e1e3;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-main); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; border-bottom: 1px solid var(--border-line); background-color: rgba(255, 248, 248, 0.85); backdrop-filter: blur(10px); }
+        .nav-logo { font-family: "Georgia", serif; font-size: 1.4rem; font-weight: bold; color: var(--accent-dark); }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; }
+        .nav-links a.active { color: var(--accent-dark); border-bottom: 2px solid var(--accent-gold); padding-bottom: 4px; }
+
+        .form-container { max-width: 950px; margin: 0 auto; padding: 80px 20px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .form-container.loaded { opacity: 1; transform: translateY(0); }
+        .details-col h2 { font-family: "Georgia", serif; font-size: 2.2rem; font-weight: 400; margin-bottom: 20px; color: var(--accent-dark); }
+        .details-col p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
+        .form-card { background-color: var(--bg-surface); border: 1px solid var(--border-line); padding: 40px; border-radius: 12px; box-shadow: 0 15px 35px rgba(74, 21, 37, 0.04); }
+        .group { margin-bottom: 22px; }
+        .group label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); margin-bottom: 8px; }
+        .group input, .group textarea { width: 100%; background-color: #faf3f4; border: 1px solid var(--border-line); padding: 14px; color: var(--text-main); border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s; }
+        .group input:focus, .group textarea:focus { outline: none; border-color: var(--accent-gold); background-color: var(--bg-surface); }
+        .action-btn { background-color: var(--accent-dark); color: #ffffff; border: none; padding: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.3s; }
+        .action-btn:hover { background-color: #5c1b2f; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">MONIM</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+    <div class="form-container" id="contactView">
+        <div class="details-col">
+            <h2>Direct Pipeline Connection</h2>
+            <p>The channel remains permanently open. Submit the communication brief below to file a secure request for an evening date configuration or specific milestone tracking assignment.</p>
+            <p>🩷🩷🩷🩷🩷🩷❤️❤️❤️❤️❤️❤️💚💚💚💚💚💚💚💚💚🩵🩵🩵🩵💙💙💙💜💜🤍🤍🤍🤎🤎🤎🤍🤍🤍💛💛🧡🧡🧡❤️❤️❤️❤️</p>
+        </div>
+        <div class="form-card">
+            <form onsubmit="event.preventDefault(); alert('Proposal Dispatched Successfully ❤️');">
+                <div class="group"><label>Current Mood Vector</label><input type="text" placeholder="How are you feeling today?" required></div>
+                <div class="group"><label>Target Venue Selection</label><input type="text" placeholder="Where should we go?" required></div>
+                <div class="group"><label>Message Brief</label><textarea rows="4" placeholder="Write your memo..." required></textarea></div>
+                <button type="submit" class="action-btn">Transmit Proposal</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { document.getElementById('contactView').classList.add('loaded'); });
+    </script>
+</body>
+</html>

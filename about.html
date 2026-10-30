@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Our Chapter</title>
+    <style>
+        :root {
+            --bg-deep: #b5b8a9; --bg-surface: #ad1717; --accent-gold: #c99398; --accent-dark: #4a1525; --text-main: #0de62a; --text-muted: #4e69b3; --border-line: #df109a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-main); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; border-bottom: 1px solid var(--border-line); background-color: rgba(163, 26, 129, 0.85); backdrop-filter: blur(10px); }
+        .nav-logo { font-family: "Georgia", serif; font-size: 1.4rem; font-weight: bold; color: var(--accent-dark); }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; }
+        .nav-links a.active { color: var(--accent-dark); border-bottom: 2px solid var(--accent-gold); padding-bottom: 4px; }
+
+        .about-container { max-width: 950px; margin: 0 auto; padding: 100px 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .about-container.loaded { opacity: 1; transform: translateY(0); }
+        .statement-title { font-family: "Georgia", serif; font-size: 2.3rem; color: var(--accent-dark); font-weight: 400; line-height: 1.35; border-bottom: 2px solid var(--border-line); padding-bottom: 30px; }
+        .narrative-body p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 25px; text-align: justify; line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">🩷🩷🩷🩷🩷</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="about-container" id="aboutView">
+        <div class="statement-title">"In an endless universe full of moving variables, your presence stands as my single certain truth."</div>
+        <div class="narrative-body">
+            <p>From the moment our paths aligned, you brought a distinct sense of purpose, beautiful security, and quiet happiness to my world. Every day spent alongside you serves as an ongoing masterclass full of unconditional support, patience, and grace.</p>
+            <p>This letter serves as an appriciation to your positive energy. Thank you for you brilliant perpective, immense personal warmth and for committing to builing this beatiful moments together. </p>
+            <p>You are highly valued, Truely regarded, Deeply appriciated and Unconditionally loved</p>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { document.getElementById('aboutView').classList.add('loaded'); });
+    </script>
+</body>
+</html>
